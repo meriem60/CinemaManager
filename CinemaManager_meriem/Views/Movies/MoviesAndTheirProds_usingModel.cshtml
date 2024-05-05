@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CinemaManager.Models.Cinema.ProdMovie>
+
+
+<h1>MoviesAndTheirProds_usingModel</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Movie Title
+            </th>
+            <th>
+                Movie Name
+            </th>
+            <th>
+                Producer Name
+            </th>
+            <th>
+                Producer Nationality
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mGenre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pNat)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
